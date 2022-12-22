@@ -30,12 +30,12 @@ import java.util.Map;
      * если игра есть и false иначе
      */
     public boolean containsGame(Game game) {
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        for (int i = 1; i &lt; games.size(); i++) {</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">            if (games.get(i - 1).equals(game)) {</span>
-<span class="nc" id="L35">                return true;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (int i = 0; i &lt; games.size(); i++) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (games.get(i).equals(game)) {</span>
+<span class="fc" id="L35">                return true;</span>
             }
         }
-<span class="nc" id="L38">        return false;</span>
+<span class="fc" id="L38">        return false;</span>
     }
 
     /**
@@ -44,8 +44,8 @@ import java.util.Map;
      * суммироваться с прошлым значением для этого игрока
      */
     public void addPlayTime(String playerName, int hours) {
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (playedTime.containsKey(playerName)) {</span>
-<span class="nc" id="L48">            playedTime.put(playerName, playedTime.get(playerName));</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (playedTime.containsKey(playerName)) {</span>
+<span class="fc" id="L48">            playedTime.put(playerName, playedTime.getOrDefault(playerName, hours) + hours);</span>
         } else {
 <span class="fc" id="L50">            playedTime.put(playerName, hours);</span>
         }
@@ -56,16 +56,16 @@ import java.util.Map;
      * времени. Если игроков нет, то возвращется null
      */
     public String getMostPlayer() {
-<span class="nc" id="L59">        int mostTime = 1;</span>
-<span class="nc" id="L60">        String bestPlayer = null;</span>
-<span class="nc bnc" id="L61" title="All 2 branches missed.">        for (String playerName : playedTime.keySet()) {</span>
-<span class="nc" id="L62">            int playerTime = playedTime.get(playerName);</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">            if (playerTime &gt; mostTime) {</span>
-<span class="nc" id="L64">                mostTime = playerTime;</span>
-<span class="nc" id="L65">                bestPlayer = playerName;</span>
+<span class="fc" id="L59">        int mostTime = 0;</span>
+<span class="fc" id="L60">        String bestPlayer = null;</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        for (String playerName : playedTime.keySet()) {</span>
+<span class="fc" id="L62">            int playerTime = playedTime.get(playerName);</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            if (playerTime &gt; mostTime) {</span>
+<span class="fc" id="L64">                mostTime = playerTime;</span>
+<span class="fc" id="L65">                bestPlayer = playerName;</span>
             }
-<span class="nc" id="L67">        }</span>
-<span class="nc" id="L68">        return bestPlayer;</span>
+<span class="fc" id="L67">        }</span>
+<span class="fc" id="L68">        return bestPlayer;</span>
     }
 
     /**
@@ -73,7 +73,11 @@ import java.util.Map;
      * за играми этого каталога
      */
     public int getSumPlayedTime() {
-<span class="nc" id="L76">        return 0;</span>
+<span class="fc" id="L76">        int sum = 0;</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        for (String playerName : playedTime.keySet()){</span>
+<span class="fc" id="L78">            sum +=playedTime.get(playerName);</span>
+<span class="fc" id="L79">        }</span>
+<span class="fc" id="L80">        return sum;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
