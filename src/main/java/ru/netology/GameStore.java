@@ -29,6 +29,7 @@ public class GameStore {
      * Проверяет наличие игры в каталоге и возврашает true
      * если игра есть и false иначе
      */
+
     public boolean containsGame(Game game) {
         for (int i = 0; i < games.size(); i++) {
             if (games.get(i - 1).equals(game)) {
@@ -43,6 +44,7 @@ public class GameStore {
      * за игрой этого каталога. Игрок задаётся по имени. Время должно
      * суммироваться с прошлым значением для этого игрока
      */
+
     public void addPlayTime(String playerName, int hours) {
         if (playedTime.containsKey(playerName)) {
             playedTime.put(playerName, playedTime.getOrDefault(playerName, hours) + hours);
@@ -55,6 +57,7 @@ public class GameStore {
      * Ищет имя игрока, который играл в игры этого каталога больше всего
      * времени. Если игроков нет, то возвращется null
      */
+
     public String getMostPlayer() {
         int mostTime = 0;
         String bestPlayer = null;
@@ -72,6 +75,7 @@ public class GameStore {
      * Суммирует общее количество времени всех игроков, проведённого
      * за играми этого каталога
      */
+    
     public int getSumPlayedTime() {
         int sum = 0;
         for (String playerName : playedTime.keySet()){

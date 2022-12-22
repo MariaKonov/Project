@@ -29,6 +29,7 @@ public class PlayerTest {
         Assertions.assertEquals("Petya", player.getName());
     }
 
+
     @Test
     public void CheckingPlaybackWithoutInstallation() {
         GameStore store = new GameStore();
@@ -38,6 +39,7 @@ public class PlayerTest {
 
         assertThrows(RuntimeException.class, () -> player.play(game, 2));
     }
+
 
     @Test
     public void thePlaybackCheckIsZero() {
@@ -56,6 +58,7 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
     public void checkingAGameOfTheSameGenreForTheSumOfHours() {
         GameStore store = new GameStore();
@@ -72,6 +75,7 @@ public class PlayerTest {
         int actual = player.sumGenre("Аркады");
         assertEquals(expected, actual);
     }
+
 
     @Test
     public void checkingAGameOfTheSameGenreForTheSumOfHours2() {
