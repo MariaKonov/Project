@@ -1,11 +1,11 @@
-package ru.netology;
+/*package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class GameStoreTest {
 
-    @Test
+     @Test
     public void shouldAddGame() {
 
         GameStore store = new GameStore();
@@ -15,4 +15,4 @@ public class GameStoreTest {
     }
 
     // другие ваши тесты
-}
+}*/
