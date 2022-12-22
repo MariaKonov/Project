@@ -89,8 +89,8 @@ public class GameStoreTest {
         Player player = new Player("Petya");
         Player player1 = new Player("Stepan");
 
-        store.addPlayTime("Petya", 3);
-        store.addPlayTime("Stepan", 5);
+        store.addPlayTime("Petya", 0);
+        store.addPlayTime("Stepan", 1);
 
         String expected = ("Stepan");
         String actual = store.getMostPlayer();
