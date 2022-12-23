@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameStoreTest {
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldAddGame() {
 
         GameStore store = new GameStore();
@@ -17,7 +17,7 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldCheckAvailability(){
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -32,7 +32,7 @@ public class GameStoreTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldShowFalseIfThereIsNoMatches() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -46,7 +46,7 @@ public class GameStoreTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldSumPlayedTime() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -64,7 +64,7 @@ public class GameStoreTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldAddTimeForOnePlayer() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -81,7 +81,7 @@ public class GameStoreTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldReturnBestPlayer() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -97,7 +97,7 @@ public class GameStoreTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void shouldReturnNull() {
         GameStore store = new GameStore();
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
